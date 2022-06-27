@@ -17,7 +17,7 @@ export const GithubProvider= ({children})=>{
     //search users
     const searchUsers=async(text)=>{
         setLoading()
-        const response=await fetch(`http://api.github.com/search/users?q=${text}`)
+        const response=await fetch(`https://api.github.com/search/users?q=${text}`)
         const {items}= await response.json()
     
        dispatch({
@@ -29,7 +29,7 @@ export const GithubProvider= ({children})=>{
     //get user infos 
     const getUser=async(login)=>{
         setLoading()
-        const response=await fetch(`http://api.github.com/users/${login}`)
+        const response=await fetch(`https://api.github.com/users/${login}`)
         if(response.statuts === 404){
             window.location='/notfound'
         }else{
@@ -46,7 +46,7 @@ export const GithubProvider= ({children})=>{
         //get user Repos : 
         const getUserRepos=async(login)=>{
             setLoading()
-            const response=await fetch(`http://api.github.com/users/${login}/repos`)
+            const response=await fetch(`https://api.github.com/users/${login}/repos`)
             if(response.statuts === 404){
                 window.location='/notfound'
             }else{
