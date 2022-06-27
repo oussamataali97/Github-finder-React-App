@@ -79,7 +79,7 @@ export const GithubProvider= ({children})=>{
         searchUsers,
         clearUsers,
         getUser,
-        getUserRepos
+        getUserRepos    
     }}>
         {children}
     
